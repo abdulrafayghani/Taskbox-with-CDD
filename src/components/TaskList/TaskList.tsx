@@ -1,5 +1,7 @@
 import React, { FC } from 'react'
 import { TaskItem } from '../Task/Task'
+import Skeleton from "@material-ui/lab/Skeleton";
+
 
 interface Tasks {
     pinned: boolean
@@ -20,7 +22,16 @@ export const TaskList: FC<TaskListProps> = ({ tasks, loading }) => {
     ]
 
     if(loading){
-        return <h1>...loading</h1>
+        return (
+            <div>
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+            </div>
+        )
     }
 
     if(tasks.length === 0){
